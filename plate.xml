@@ -1,5 +1,10 @@
 <?xml version="1.0"?>
+<!-- When a web property is created using a framework, Zesty.io looks at the plate.xml file to build the Content tab in the Manager. This plate.xml will instruct Zesty.io which pages, page groups, data sets and fields the Content section should start with. -->
+
 <plate>
+	<!-- This head is very similar to the <head> you would set in a typical website.
+	If you're getting started with jQuery or a Google font, this is the spot to inclue those link and script tags. There are additional tags Zesty.io will add to every page <head> automatically, such as the title, meta description and open graph tags. -->
+
 	<head>
 		<doctype>html5</doctype>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
@@ -7,33 +12,51 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"/>
 		<googlefont family="Varela"/>
 	</head>
-	<clippings>
-		<text name="site_name" name_friendly="Site Name" required="1"><![CDATA[Zesty Simple Business Plate]]></text>
-		<images name="logo" name_friendly="Site Logo" limit="1"><![CDATA[https://20d517ca209a7bccb489-004943f0e258d746dd2be0d13fab28fe.ssl.cf2.rackcdn.com/sz-x90-or-simple-small-business-plate-logo.png]]></images>
-		<text name="footer_text" name_friendly="Footer Text"><![CDATA[&#xA9;2013 Zesty Simple Business Plate. Zesty Content Management System.]]></text>
-		<text name="google_publisher_id" name_friendly="Google Publisher ID"></text>
-	</clippings>
+
+	<!-- The base content configuration is declared here. We call them ingredients. When building a template you need at least a homepage, but other ingredients can be added as well. Content ingredients can also be added later through the sitemap tool.-->
+
+	<!-- The initial Content tab configuration is declared here. We call them ingredients. When building a template you need at least a homepage templateset, but other ingredients can be added as well. Content ingredients can also be added and edited anytime through the sitemap tool or through the Config tab.-->
+	<!-- There are 3 content types:
+	1.Templatesets - a single page e.g. homepage
+	2. Pagesets - Multiple pages that share an HTML view e.g. articles
+	3. Datasets - Groups of uniform content items used as elements on a page. e.g. images for a slider or Q-and-A's for an FAQ page. -->
+
 	<ingredients>
+		<!--Since the homepage is a single page, it is a templateset. -->
 		<templateset name="homepage" name_friendly="Homepage" view="homepage">
 			<fields>
 				<text name="title" name_friendly="Lead in Title" required="1"/>
 				<wysiwyg_advanced name="content" name_friendly="Intro Text"/>
 			</fields>
+			<!-- Each content set needs to be preloaded with content. You can see that the XML tag names below match the field names above -->
 			<items>
+				<!-- path_part sets zesty_home as the homepage -->
 				<item link_title="Homepage" path_part="zesty_home">'
 					<title><![CDATA[Homepage]]></title>
 					<content><![CDATA[There can be a lot of content you could potentially put on your homepage, but you must start simple.
 
 What Does Your Company Do?
-A user should be able to figure this one out in under three seconds. If they can’t you aren’t doing it right. If you sell a specific product it needs to be right there on the homepage.
+A user should be able to figure this one out in under three seconds. If they can’t, you aren’t doing it right. If you sell a specific product it needs to be right there on the homepage.
 
-How Do You Do It
-You’re either cheap, or fast, or high quality, or green, or something else, but you need to let customers know. Say what you do (question one) and then how you do it. People don’t have the time online for a sales pitch so just put it out there as simply and succinctly as possible.
+How Do You Do It?
+You’re either cheap, or fast, or high quality, or green, or something else; but you need to let customers know. Say what you do (question one), and then how you do it. When they're online people don’t have the time for a sales pitch, so just put it out there as simply and succinctly as possible.
 
 How Are You Different?
-Why would a visitor chose you over the competition?]]></content>
+Why would a visitor choose you over the competition?]]></content>
 				</item>
 			</items>
 		</templateset>
 	</ingredients>
+
+	<!-- Clippings -->
+
+	<!-- Clippings are globally accessible content. For example, site logo, background images, seasonal ad images, and other template consistent data between pages are great candidates for clippings. By setting clippings, content editors can control the consistent parts of your template. -->
+	<!-- Clippings follow the same pattern as content ingredients. You can see the matching XML tags and field names below. -->
+
+	<clippings>
+		<text name="site_name" name_friendly="Site Name" required="1"><![CDATA[Zesty.io Simple Business Plate]]></text>
+		<images name="logo" name_friendly="Site Logo" limit="1"><![CDATA[https://20d517ca209a7bccb489-004943f0e258d746dd2be0d13fab28fe.ssl.cf2.rackcdn.com/sz-x90-or-simple-small-business-plate-logo.png]]></images>
+		<text name="footer_text" name_friendly="Footer Text"><![CDATA[&#xA9;2013 Zesty.io Simple Business Plate. Zesty.io Content Management System.]]></text>
+		<text name="google_publisher_id" name_friendly="Google Publisher ID"></text>
+	</clippings>
 </plate>

@@ -1,10 +1,12 @@
-{{include header}}
+<!-- If you would like a custom '404 - Not Found' page, add that code here. -->
+
+{{ include header }}
 
 <div class="content-container z-row">
 	<div class="structure content page404">
 		(** this is your 404 page when a bad page is reached **)
 		<h1>404 Page Not Found</h1>
-		
+
 		(** google code **)
 		<script type="text/javascript">
 		  var GOOG_FIXURL_LANG = 'en';
@@ -17,4 +19,4 @@
 	</div>
 </div>
 
-{{include footer}}
+{{ include footer }}

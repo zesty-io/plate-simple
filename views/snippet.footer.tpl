@@ -1,5 +1,7 @@
+<!-- Snippets are not associated with a specific view but can be included on any page -->
+
 <div class="footer-container z-row">
-	<div class="structure footer">{{clippings.footer_text}}</div>
+	<div class="structure footer">{{ clippings.footer_text }}</div>
 </div>
 
-<p class="copyright z-row">{{clippings.site_name}}</p>
+<p class="copyright z-row">{{ clippings.site_name }}</p>
